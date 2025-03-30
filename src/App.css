@@ -1,32 +1,571 @@
-.App {
+/* src/App.css */
+/* Global Styles */
+:root {
+  --primary-color: #6930c3; /* Deep purple from your logo */
+  --secondary-color: #00c7ff; /* Bright blue from your logo */
+  --accent-color: #ff3d71; /* Bright pink/red from your logo */
+  --text-color: #ffffff;
+  --dark-bg: #120338; /* Very dark purple background */
+  --light-bg: #2a0481; /* Slightly lighter purple */
+  --gradient-bg: linear-gradient(135deg, #120338 0%, #2a0481 100%);
+  --card-bg: rgba(41, 19, 110, 0.8); /* Semi-transparent purple */
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background: var(--dark-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+button, .cta-button, .secondary-button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button {
+  background: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 61, 113, 0.4);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 61, 113, 0.6);
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.secondary-button:hover {
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+}
+
+/* Header Styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(18, 3, 56, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover:after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background: var(--gradient-bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,170.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+/* Games Section */
+.games-section {
+  background: var(--light-bg);
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.game-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.game-image {
+  position: relative;
+  height: 200px;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.game-info {
+  padding: 20px;
+}
+
+/* About Section */
+.about-section {
+  background: var(--dark-bg);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 3px solid var(--secondary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Blog Section */
+.blog-section {
+  background: var(--light-bg);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.blog-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-date {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: var(--dark-bg);
+  text-align: center;
+  padding: 60px 0;
+}
+
+.newsletter-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 600px;
+  margin: 30px auto 0;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.newsletter-form button {
+  border-radius: 0 50px 50px 0;
+}
+
+/* Contact Section */
+.contact-section {
+  background: var(--light-bg);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-methods {
+  margin-top: 30px;
+}
+
+.contact-method {
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.contact-form form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--secondary-color);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--dark-bg);
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 80px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 2.2rem;
   }
+
+  .about-content,
+  .contact-content,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form input {
+    border-radius: 50px;
+    margin-bottom: 15px;
+  }
+
+  .newsletter-form button {
+    border-radius: 50px;
+  }
+
+  nav {
+    display: none; /* For mobile menu, you'd need to implement a hamburger */
+  }
+}
+
+/* Animation Effects */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.game-card {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: calc(var(--animation-order) * 0.5s);
+}
+
+/* Glowing Effects */
+.cta-button,
+.game-status,
+.member-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:after,
+.game-status:after,
+.member-photo:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.cta-button:hover:after,
+.game-card:hover .game-status:after,
+.team-member:hover .member-photo:after {
+  left: 100%;
+  top: 100%;
+  opacity: 1;
 }
