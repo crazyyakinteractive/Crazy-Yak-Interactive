@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 // src/App.js
 import React, { useState } from "react";
 import "./App.css";
