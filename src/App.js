@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import logo from "./logo.jpg"; // You'll want to replace this with your Crazy Yak logo
 
@@ -13,11 +13,11 @@ const Header = () => {
         </div>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#devblog">Dev Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#games">Games</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#devblog">Dev Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
