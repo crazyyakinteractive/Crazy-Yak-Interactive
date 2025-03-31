@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import logo from "./logo.svg"; // You'll want to replace this with your Crazy Yak logo
+import logo from "./logo.jpg"; // You'll want to replace this with your Crazy Yak logo
 
 // Header Component
 const Header = () => {
