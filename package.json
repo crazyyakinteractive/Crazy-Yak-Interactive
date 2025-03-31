@@ -1,33 +1,31 @@
 {
-  "name": "create-react-app-lambda",
+  "name": "crazy-yak-interactive-website",
   "version": "0.5.0",
   "private": true,
-  "dependencies": {
-    "axios": "^0.19.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1"
-  },
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "run-p build:**",
-    "build:app": "react-scripts build",
-    "build:lambda": "netlify-lambda build src/lambda",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:app": "vite build",
+    "build:lambda": "netlify-lambda build src/lambda"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "axios": "^1.8.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
     "netlify-lambda": "^1.4.5",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "vite": "^6.2.0"
   }
 }

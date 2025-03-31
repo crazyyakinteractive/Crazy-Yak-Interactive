@@ -15,11 +15,21 @@ const Header = () => {
         </div>
         <nav>
           <ul>
-            <li><a href="/#home">Home</a></li>
-            <li><a href="/#games">Games</a></li>
-            <li><a href="/#about">About Us</a></li>
-            <li><a href="/#devblog">Dev Blog</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li>
+              <a href="/#home">Home</a>
+            </li>
+            <li>
+              <a href="/#games">Games</a>
+            </li>
+            <li>
+              <a href="/#about">About Us</a>
+            </li>
+            <li>
+              <a href="/#devblog">Dev Blog</a>
+            </li>
+            <li>
+              <a href="/#contact">Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -33,7 +43,10 @@ const HeroSection = () => {
     <section id="home" className="hero-section">
       <div className="hero-content">
         <h1>Welcome to Crazy Yak Interactive</h1>
-        <p>Creating playful, vibrant gaming experiences that bring joy to players around the world</p>
+        <p>
+          Creating playful, vibrant gaming experiences that bring joy to players
+          around the world
+        </p>
         <button className="cta-button">Discover Our Games</button>
       </div>
     </section>
@@ -48,9 +61,10 @@ const GamesShowcase = () => {
       id: 1,
       title: "Coming Soon: Our First Adventure",
       image: "https://via.placeholder.com/300x200",
-      description: "An exciting adventure game currently in development. Stay tuned for updates!",
+      description:
+        "An exciting adventure game currently in development. Stay tuned for updates!",
       status: "In Development",
-    }
+    },
   ];
 
   return (
@@ -58,7 +72,7 @@ const GamesShowcase = () => {
       <div className="container">
         <h2>Our Games</h2>
         <div className="games-grid">
-          {games.map(game => (
+          {games.map((game) => (
             <div key={game.id} className="game-card">
               <div className="game-image">
                 <img src={game.image} alt={game.title} />
@@ -84,8 +98,17 @@ const AboutStudio = () => {
         <h2>About Crazy Yak Interactive</h2>
         <div className="about-content">
           <div className="about-text">
-            <p>Founded in 2025, Crazy Yak Interactive is a passionate indie game studio focused on creating unique, engaging gaming experiences. Our team combines creativity, technical expertise, and a love for games to craft memorable adventures.</p>
-            <p>Our mission is to develop games that captivate players with vibrant worlds, compelling characters, and innovative gameplay mechanics.</p>
+            <p>
+              Founded in 2025, Crazy Yak Interactive is a passionate indie game
+              studio focused on creating unique, engaging gaming experiences.
+              Our team combines creativity, technical expertise, and a love for
+              games to craft memorable adventures.
+            </p>
+            <p>
+              Our mission is to develop games that captivate players with
+              vibrant worlds, compelling characters, and innovative gameplay
+              mechanics.
+            </p>
           </div>
           <div className="team-grid">
             {/* Add team members here when you have them */}
@@ -110,8 +133,9 @@ const DevBlogPreview = () => {
       id: 1,
       title: "The Birth of Crazy Yak Interactive",
       date: "March 30, 2025",
-      excerpt: "Today marks the beginning of our journey as a game development studio. Here's what we're planning and what you can expect from us.",
-    }
+      excerpt:
+        "Today marks the beginning of our journey as a game development studio. Here's what we're planning and what you can expect from us.",
+    },
   ];
 
   return (
@@ -119,17 +143,21 @@ const DevBlogPreview = () => {
       <div className="container">
         <h2>Development Blog</h2>
         <div className="blog-grid">
-          {blogPosts.map(post => (
+          {blogPosts.map((post) => (
             <div key={post.id} className="blog-card">
               <div className="blog-date">{post.date}</div>
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>
-              <a href="#" className="read-more">Read More</a>
+              <a href="#" className="read-more">
+                Read More
+              </a>
             </div>
           ))}
         </div>
         <div className="blog-cta">
-          <a href="#" className="secondary-button">View All Posts</a>
+          <a href="#" className="secondary-button">
+            View All Posts
+          </a>
         </div>
       </div>
     </section>
@@ -152,7 +180,10 @@ const Newsletter = () => {
     <section className="newsletter-section">
       <div className="container">
         <h2>Stay Updated</h2>
-        <p>Subscribe to our newsletter for development updates, game releases, and exclusive content.</p>
+        <p>
+          Subscribe to our newsletter for development updates, game releases,
+          and exclusive content.
+        </p>
         <form onSubmit={handleSubmit} className="newsletter-form">
           <input
             type="email"
@@ -161,7 +192,9 @@ const Newsletter = () => {
             placeholder="Your email address"
             required
           />
-          <button type="submit" className="cta-button">Subscribe</button>
+          <button type="submit" className="cta-button">
+            Subscribe
+          </button>
         </form>
       </div>
     </section>
@@ -176,7 +209,10 @@ const Contact = () => {
         <h2>Get In Touch</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <p>We'd love to hear from you! Reach out to us for feedback, collaboration opportunities, or just to say hello.</p>
+            <p>
+              We'd love to hear from you! Reach out to us for feedback,
+              collaboration opportunities, or just to say hello.
+            </p>
             <div className="contact-methods">
               <div className="contact-method">
                 <h3>Email</h3>
@@ -185,9 +221,15 @@ const Contact = () => {
               <div className="contact-method">
                 <h3>Social Media</h3>
                 <div className="social-links">
-                  <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">Discord</a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Twitter
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Discord
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                  </a>
                 </div>
               </div>
             </div>
@@ -204,9 +246,16 @@ const Contact = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
               </div>
-              <button type="submit" className="cta-button">Send Message</button>
+              <button type="submit" className="cta-button">
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -226,21 +275,40 @@ const Footer = () => {
           </div>
           <div className="footer-links">
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#games">Games</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#devblog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#games">Games</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#devblog">Blog</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
           <div className="footer-social">
-            <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Discord</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Discord
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Crazy Yak Interactive. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Crazy Yak Interactive. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
