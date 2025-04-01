@@ -127,19 +127,6 @@ function App() {
             </div>
           )}
         </div>
-
-        <div className="social-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Twitter
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Discord
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>
-        </div>
-
         <footer className="footer">
           &copy; {new Date().getFullYear()} Crazy Yak Interactive. All rights
           reserved.
@@ -150,3 +137,14 @@ function App() {
 }
 
 export default App;
+//<div className="social-links">
+//<a href="#" target="_blank" rel="noopener noreferrer">
+//Twitter
+//</a>
+//<a href="#" target="_blank" rel="noopener noreferrer">
+//Discord
+//</a>
+//<a href="#" target="_blank" rel="noopener noreferrer">
+//Instagram
+//</a>
+//</div>
