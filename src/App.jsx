@@ -16,7 +16,7 @@ function App() {
   // Countdown timer to a specific date and time
   useEffect(() => {
     // Set your specific target date and time here
-    const targetDate = new Date("2025-06-12T23:59:59");
+    const targetDate = new Date("2025-05-01T12:00:00"); // Example: May 1, 2025 at 12:00 PM
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -43,12 +43,28 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add newsletter signup functionality here
-    console.log("Newsletter signup for:", email);
-    setEmail("");
-    setIsSubmitted(true);
-    // Reset submission message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    // Get form data
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // Submit the form data to Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        console.log("Form successfully submitted");
+        setEmail("");
+        setIsSubmitted(true);
+        // Reset submission message after 3 seconds
+        setTimeout(() => setIsSubmitted(false), 3000);
+      })
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        alert("There was a problem submitting your email. Please try again.");
+      });
   };
 
   return (
@@ -84,9 +100,19 @@ function App() {
 
         <div className="subscription-container">
           <h3>Get notified when we launch</h3>
-          <form onSubmit={handleSubmit} className="subscription-form">
+          <form
+            name="launch-notification"
+            method="POST"
+            data-netlify="true"
+            onSubmit={handleSubmit}
+            className="subscription-form"
+          >
+            {/* Hidden input for Netlify Forms */}
+            <input type="hidden" name="form-name" value="launch-notification" />
+
             <input
               type="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
