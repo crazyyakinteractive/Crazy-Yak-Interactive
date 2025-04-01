@@ -7,7 +7,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [countdown, setCountdown] = useState({
-    days: 0,
+    days: 30,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -46,13 +46,12 @@ function App() {
 
     // Get form data
     const form = e.target;
-    const formData = new FormData(form);
+    const data = new FormData(form);
 
-    // Submit the form data to Netlify
+    // Submit the form - with Netlify attribute, this will be handled by Netlify
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: data,
     })
       .then(() => {
         console.log("Form successfully submitted");
@@ -103,7 +102,7 @@ function App() {
           <form
             name="launch-notification"
             method="POST"
-            data-netlify="true"
+            netlify="true"
             onSubmit={handleSubmit}
             className="subscription-form"
           >
