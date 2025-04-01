@@ -7,7 +7,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [countdown, setCountdown] = useState({
-    days: 30,
+    days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -16,7 +16,7 @@ function App() {
   // Countdown timer to a specific date and time
   useEffect(() => {
     // Set your specific target date and time here
-    const targetDate = new Date("2025-05-01T12:00:00"); // Example: May 1, 2025 at 12:00 PM
+    const targetDate = new Date("2025-06-13T12:00:00"); // Example: May 1, 2025 at 12:00 PM
 
     const interval = setInterval(() => {
       const now = new Date();
