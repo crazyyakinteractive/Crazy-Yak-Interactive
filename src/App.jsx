@@ -16,7 +16,7 @@ function App() {
   // Countdown timer to a specific date and time
   useEffect(() => {
     // Set your specific target date and time here
-    const targetDate = new Date("2025-06-13T12:00:00"); // Example: May 1, 2025 at 12:00 PM
+    const targetDate = new Date("2026-03-21T12:00:00"); // Example: May 1, 2025 at 12:00 PM
 
     const interval = setInterval(() => {
       const now = new Date();
