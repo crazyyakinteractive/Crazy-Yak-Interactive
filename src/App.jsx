@@ -116,7 +116,8 @@ function App() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email address"
               required
-            />
+                      />
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit" className="cta-button">
               Notify Me
             </button>
